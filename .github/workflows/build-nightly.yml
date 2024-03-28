@@ -11,7 +11,7 @@ permissions:
 jobs:
   compute-suffix:
     runs-on: ubuntu-latest
-    if: github.repository == 'lemoncat0w0/mastodon'
+    if: github.repository == 'lemoncat0w0/mastodon0w0'
     steps:
       - id: version_vars
         env:
