@@ -8,7 +8,7 @@
 
 /* 📄 Meta */
 :root {
-    --version: "v2.0.0-pre5~";
+    --version: "v2.0.0-pre4";
 
     --variant-name: "Purple";
     --variant-emoji: "\1FABB\00A0";
@@ -2481,7 +2481,7 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
     }
 }
 .app-body :is(.status__wrapper.focusable, .detailed-status__wrapper.focusable):focus .status__avatar {
-    outline: 6px solid var(--color-post-bg);
+    outline: 6px solid var(--color-content-bg-focus);
 }
 
 /* 👁️ Post detailed view */
@@ -2555,20 +2555,17 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
     position: relative;
 }
 .app-body .detailed-status__meta__line:first-child {
-    color: transparent;
     padding-left: 20px;
-    gap: 0;
 }
 .app-body .detailed-status__meta__line:first-child svg {
     position: absolute;
     left: 0;
 }
+.app-body .detailed-status__meta__line:first-child {
+    color: transparent
+}
 .app-body .detailed-status__meta__line:first-child > * {
     color: var(--color-content-fg);
-}
-.app-body .detailed-status__application::before {
-    content: "\00B7\00A0";
-    margin-left: -3px;
 }
 .app-body .detailed-status__link:is([href$="/reblogs"], [href$="/favourites"]) {
     padding-left: 20px;
@@ -3179,14 +3176,11 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
     display: none;
 }
 
-.app-body .status__wrapper.status__wrapper-direct,
-.app-body .notification__message:has(+ div > .status__wrapper.status__wrapper-direct) {
+.app-body .status__wrapper.status__wrapper-direct {
     --color-post-bg: color-mix(in srgb, var(--color-accent), var(--color-content-bg) 90%);
 }
 .app-body .status__wrapper.status__wrapper-direct:has(.status__content:hover),
-.app-body .status__wrapper.status__wrapper-direct:has(.status__content:hover) .status__avatar,
-.app-body .status__wrapper.status__wrapper-direct.focusable:focus,
-.app-body .notification__message:has(+ div > .status__wrapper.status__wrapper-direct .status__content:hover) {
+.app-body .status__wrapper.status__wrapper-direct:has(.status__content:hover) .status__avatar {
     --color-post-bg: color-mix(in srgb, var(--color-accent), var(--color-content-bg) 85%);
 }
 
@@ -4850,7 +4844,7 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
 }
 .app-body .notification__message {
     padding: 12px 12px 5px;
-    background-color: var(--color-post-bg);
+    background-color: var(--color-content-bg);
     color: var(--color-content-fg-bold);
     transition: all .3s;
 }
@@ -5044,11 +5038,6 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
     color: var(--color-accent-fg);
     border-radius: 50px;
 }
-.app-body .filtered-notifications-banner__badge__badge {
-    background-color: var(--color-content-bg);
-    color: var(--color-content-fg);
-    font-weight: 600;
-} 
 .app-body .filtered-notifications-banner__text {
     color: var(--color-content-fg);
 }
@@ -5744,8 +5733,9 @@ div[tabindex="-1"] + div[tabindex="-1"] > .status__wrapper > .status-reply.statu
 }
 .app-body .interaction-modal {
     background-color: var(--color-content-bg);
-    border-radius: 10px;
-    box-shadow: var(--dropdown-shadow);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, .25),
+        0 8px 10px -6px rgba(0, 0, 0, .25);
 }
 .app-body .interaction-modal,
 .app-body .interaction-modal__lead h3 {
@@ -6605,19 +6595,8 @@ a:is(.active,
 .about__section.active .about__section__title {
     background-color: var(--color-accent-bg);
 }
-.app-body .rules-list__text,
-.app-body .rules-list__hint {
-    color: var(--color-content-fg);
-}
-.app-body .rules-list__text {
-    font-weight: 600;
-}
-.app-body .rules-list__hint {
-    opacity: .7;
-    padding-top: 4px;
-}
 .app-body .rules-list li {
-    border-bottom: 1px solid var(--color-lines);
+    border-bottom: 1px solid var(--color-accent-lines);
     padding: 1em 1.75em 1em 3.4em;
 }
 .app-body .rules-list li:last-child {
