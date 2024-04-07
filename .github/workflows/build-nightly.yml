@@ -17,11 +17,7 @@ jobs:
         env:
           TZ: Etc/UTC
         run: |
-<<<<<<< Updated upstream
-          echo mastodon_version_prerelease=nightly.$(date +'%Y-%m-%d').catbuild>> $GITHUB_OUTPUT
-=======
           echo mastodon_version_prerelease=nightly.$(date +'%Y-%m-%d').7cat>> $GITHUB_OUTPUT
->>>>>>> Stashed changes
     outputs:
       prerelease: ${{ steps.version_vars.outputs.mastodon_version_prerelease }}
 
