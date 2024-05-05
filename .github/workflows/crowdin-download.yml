@@ -11,7 +11,7 @@ permissions:
 jobs:
   download-translations:
     runs-on: ubuntu-latest
-    if: github.repository == 'glitch-soc/mastodon'
+    if: github.repository == 'lemoncat0w0/mastodon0w0'
 
     steps:
       - name: Checkout
